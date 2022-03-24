@@ -1,12 +1,11 @@
 import './App.css';
 import MockmanEs from 'mockman-js';
+import { Route, Routes } from 'react-router';
 
 function App() {
   return (
     <>
 		<Routes>
-			<Route path='home' element={<App/>}/>
-			<Route index element={<App/>}/>
 			<Route path='mock' element={<MockmanEs/>}/>
 		</Routes>
 	</>

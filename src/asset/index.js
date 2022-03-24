@@ -1,4 +1,5 @@
 const Images = {
+    homepage: require('./images/bg.jpg'),
 	
     video1: require('./images/video-preview (1).gif'),
     video2: require('./images/video-preview (2).gif'),

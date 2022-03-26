@@ -1,3 +1,16 @@
+import { ReactComponent as Logo } from './svg/logo.svg';
+import { ReactComponent as User } from './svg/user.svg';
+import { ReactComponent as Home } from './svg/home.svg';
+import { ReactComponent as Login } from './svg/login.svg';
+import { ReactComponent as Logout } from './svg/logout.svg';
+import { ReactComponent as AddFolder } from './svg/add_folder.svg';
+import { ReactComponent as PrivateFolder } from './svg/private_folder.svg';
+import { ReactComponent as LikeFolder } from './svg/like_folder.svg';
+import { ReactComponent as PlaylistFolder } from './svg/playlist_folder.svg';
+import { ReactComponent as WatchlistFolder } from './svg/watchlist_folder.svg';
+import { ReactComponent as HistoryFolder } from './svg/history_folder.svg';
+
+
 const Images = {
     homepage: require('./images/bg.jpg'),
 	
@@ -32,4 +45,6 @@ const Images = {
     video25: require('./images/video-preview (25).gif'),
 };
 
+
 export default Images;
+export { Logo, User, Home, Login, Logout, AddFolder, PrivateFolder, LikeFolder, PlaylistFolder, WatchlistFolder, HistoryFolder }

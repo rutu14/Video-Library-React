@@ -1,0 +1,151 @@
+.header {
+    height: 7rem;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 2px -2px var(--nav-shadow);
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+}
+  
+.mobile-avatar {
+    display: none;
+}
+  
+.brand-name {
+    margin-left: 5px;
+    color: var(--primary-colour);
+}
+  
+.login-btn {
+    margin: 0 6px;
+    border-radius: 1.2rem;
+}
+  
+.sidebar {	
+    display: flex;	
+    align-items: center;
+    flex-direction: column;	
+    font-size: 1.6rem;
+    width: 6.4rem;
+    height: calc(100vh - 7rem);
+	border-top: 2px solid var(--bg);
+    border-radius: 4px;
+    box-shadow: 2px 0 2px -2px var(--nav-shadow);
+}
+  
+.btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.8rem;
+    height: 4.8rem;
+    margin-top: 8px;
+    border-radius: 4px;
+    color: var(--primary-colour);
+}
+  
+.icon-holder{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4.8rem; 
+}
+  
+.btn-icon:hover{
+    background-color: var(--nav-link-hover-bg);
+    color: var( --nav-link-hover-text);
+}
+  
+.acc{
+    margin-top: auto;
+    border-radius: 2px;
+    width: 100%;
+}
+
+.user{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+	background-color: var(--bg);
+    border-color: var(--primary-colour);
+}
+
+.dropdown-menu {
+    display: block;
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    transform: translate(0px, 55px);
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    background-color: var(--bg);
+    border: 1px solid var(--btn-link);
+    border-radius: 4px;
+}
+
+.menu-option{
+	display: flex;
+    align-items: center;
+}
+  
+.dropdown-menu:after,
+.dropdown-menu:before {
+    bottom: 100%;
+    left: 80%;
+    border: 1px solid transparent;
+    content: " ";
+    position: absolute;
+}
+  
+.dropdown-menu:before {
+    border-bottom-color: var(--btn-link);
+    border-width: 6px;
+    margin-left: -6px;
+    margin-bottom: 1px;
+}
+  
+.dropdown-menu:after {
+    border-bottom-color: var(--bg);
+    border-width: 5.8px;
+    margin-left: -5.8px;
+}
+  
+.input-pos {
+    margin-left: auto;
+}
+  
+.inp-border {
+    border: 1px solid var(--input-box);
+}
+  
+.input-width {
+    width: 50rem;
+    border-right: 0;
+    height: 3.2rem;
+    padding: unset;
+    padding-inline-end: 1.6rem;
+    padding-inline-start: 1.6rem;
+    line-height: 2.4rem;
+    font-size: 1.6rem;
+}
+  
+@media only screen and (max-width: 1200px) {
+    .input-width {
+      width: unset;
+    }
+  
+    .input-pos {
+      display: none;
+    }
+}
+  
+@media only screen and (max-width: 600px) {
+    .mobile-avatar {
+      display: inline-flex;
+      border: none;
+	  background-color: var(--bg);
+    }
+}
+  

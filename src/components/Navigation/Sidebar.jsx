@@ -8,28 +8,28 @@ const Sidebar = () => {
 
     const MobileSidebar = () => {
         return(
-        <div class="sidebar">
+        <div className="sidebar">
             <div className="icon-holder">
-                <Link to={'/'} class="btn-icon" href="#" >
+                <Link to={'/'} className="btn-icon">
                     <Home width={32} height={32}/>
                 </Link>
-                <Link to={'/'} class="btn-icon" href="#" >
+                <Link to={'/'} className="btn-icon">
                     <LikeFolder width={32} height={32}/>
                 </Link>
-                <Link to={'/'} class="btn-icon" href="#" >
+                <Link to={'/'} className="btn-icon">
                     <PlaylistFolder width={32} height={32}/>
                 </Link>
-                <Link to={'/'} class="btn-icon" href="#" >
+                <Link to={'/'} className="btn-icon">
                     <WatchlistFolder width={32} height={32}/>
                 </Link>
-                <Link to={'/'} class="btn-icon" href="#" >
+                <Link to={'/'} className="btn-icon">
                     <HistoryFolder width={32} height={32}/>
                 </Link>
-                <Link to={'/'} class="btn-icon" href="#" >
+                <Link to={'/'} className="btn-icon">
                     <Logout width={32} height={32}/>
                 </Link>
             </div>
-            <Link to={'/'} class="btn-icon acc" href="#" >
+            <Link to={'/'} className="btn-icon bottom-icon">
                 <PrivateFolder width={32} height={32}/>
             </Link>
         </div>
@@ -39,27 +39,27 @@ const Sidebar = () => {
     return(<>
         {isMobile ? <MobileSidebar/>
             : <div class="sidebar">
-            <div className="icon-holder">
-                <Link to={'/'} class="btn-icon" href="#" >
-                    <Home width={40} height={40} />
+                <div className="icon-holder">
+                    <Link to={'/'} className="btn-icon">
+                        <Home width={40} height={40} />
+                    </Link>
+                    <Link to={'/'} className="btn-icon">
+                        <LikeFolder width={40} height={40} />
+                    </Link>
+                    <Link to={'/'} className="btn-icon">
+                        <PlaylistFolder width={40} height={40}/>
+                    </Link>
+                    <Link to={'/'} className="btn-icon">
+                        <WatchlistFolder width={40} height={40}/>
+                    </Link>
+                    <Link to={'/'} className="btn-icon">
+                        <HistoryFolder width={40} height={40} stroke-width={2}/>
+                    </Link>
+                </div>
+                <Link to={'/'} className="btn-icon acc">
+                    <PrivateFolder width={40} height={40} />
                 </Link>
-                <Link to={'/'} class="btn-icon" href="#" >
-                    <LikeFolder width={40} height={40} />
-                </Link>
-                <Link to={'/'} class="btn-icon" href="#" >
-                    <PlaylistFolder width={40} height={40}/>
-                </Link>
-                <Link to={'/'} class="btn-icon" href="#" >
-                    <WatchlistFolder width={40} height={40}/>
-                </Link>
-                <Link to={'/'} class="btn-icon" href="#" >
-                    <HistoryFolder width={40} height={40} stroke-width={2}/>
-                </Link>
-            </div>
-            <Link to={'/'} class="btn-icon acc" href="#" >
-                <PrivateFolder width={40} height={40} />
-            </Link>
-        </div>}
+            </div>}
         </>
     );
 }

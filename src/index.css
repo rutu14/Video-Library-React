@@ -7,9 +7,41 @@
   --nav-shadow:#00000033;
   --nav-link-hover-bg:#8d84d0;
   --nav-link-hover-text:#e2e8f0;
+
+  --home-card-bg:#e1e3eb;
+  --home-cards-contents:#0d119b;
+  --play-action:#0000003d;
+  --time-info:#798897bf;
 }
 
 body{
   background-color: var(--bg);
 }
+
+
+.wrapper{
+  display: grid;
+  grid-template-columns: 6.4rem 1fr; 
+  grid-template-areas:  
+  "header header header header"
+  "aside main main main"
+  "aside main main main"
+  "aside main main main"
+  "aside main main main"
+  "aside main main main"; 
+}
+
+.header{
+  grid-area: header;
+}
+
+.sidebar{
+  grid-area: aside;
+}
+
+.main-container{
+  grid-area: main;
+  padding: 2rem 4rem;
+}
+
                    

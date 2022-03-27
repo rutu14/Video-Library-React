@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import { VideoContext, VideoProvider } from './context/videoContext';
+import { VideoProvider } from './context/videoContext';
 import { makeServer } from "./server";
 
 makeServer();

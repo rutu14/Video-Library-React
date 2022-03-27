@@ -1,0 +1,113 @@
+.home-card{
+    width: 25rem;
+    height: 20rem;
+    border-radius: 16px;
+    background-color: var(--home-card-bg);
+}
+
+.video-part{
+    border-radius: 15px;
+    width: 22rem;
+    height: 18rem;
+    transform: translate(-10px, -18px);
+    position: absolute;
+}
+
+.play-action{
+    position: absolute;
+    padding: 10px;
+    transform: translate(75px, 45px);
+    z-index: 2;
+    color: var(--warning-background);
+    background-color: var(--play-action);
+    backdrop-filter: blur(3px);
+    border-radius: 15px;
+}
+
+.time-info{
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    z-index: 3;
+    padding: 2px 5px;
+    font-size: 1.3rem;
+    border-radius: 4px;
+    transform: translate(130px, 130px);
+    color: var(--rating-checked);
+    background-color: var(--time-info);
+}
+
+.time-value{
+    margin-left: 5px;
+}
+
+.card-contents-below{
+    transform: translate(10px, 165px);
+    display: flex;
+    align-items: center;
+    padding: 0 1.5rem;
+    font-size: 1.5rem;
+    color: var(--home-cards-contents);
+    height: 3.8rem;
+}
+
+.card-contents-aside{
+    position: absolute;
+    transform: translate(210px, 0px);
+    height: inherit;
+    width: 3.6rem;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.aside-btns{
+    color: var(--home-cards-contents);
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    display: inline-flex;
+    border: none;
+    margin: 5px;
+}
+
+.view-count-text{
+    margin: 5px;
+}
+
+.creator-text{
+    width: 10rem;
+    overflow-x: clip;
+    white-space: nowrap;
+}
+
+@media only screen and (max-width: 768px) {
+    .play-action {
+        transform: translate(58px, 25px);
+    }
+    .time-info{
+        transform: translate(118px, 120px);
+    }
+    .card-contents-aside{
+        transform: translate(195px, 0px);
+    }
+    .card-contents-below{
+        transform: translate(10px, 150px);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .play-action {
+        transform: translate(56px, 20px);
+    }
+    .time-info{
+        transform: translate(112px, 110px);
+    }
+    .card-contents-aside{
+        transform: translate(185px, 0px);
+    }
+    .card-contents-below{
+        transform: translate(10px, 140px);
+    }
+}

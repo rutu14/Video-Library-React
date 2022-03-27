@@ -1,15 +1,13 @@
 import './App.css';
 import MockmanEs from 'mockman-js';
 import { Route, Routes } from 'react-router';
-import { Home } from './pages/Home/Home';
-import { PageLayout } from './utils/PageLayout';
+import { Navigation } from './components';
 
 function App() {
   return (
-	<Routes>
-	 	<Route path='/' element={<PageLayout/>}>
-		 	<Route index element={<Home/>}/>
-		 	<Route path='home' element={<Home/>}/>
+    <>
+		<Navigation/>
+		<Routes>
 			<Route path='mock' element={<MockmanEs/>}/>
 		</Route>
 	</Routes>

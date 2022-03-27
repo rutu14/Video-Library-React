@@ -1,10 +1,13 @@
 import { Link } from 'react-router-dom';
-import { HistoryFolder, Home, LikeFolder, Logout, PlaylistFolder, PrivateFolder, WatchlistFolder } from '../../asset';
-import useMediaQuery from '../../utils/mediaQuery';
+import { AddFolder, HistoryFolder, Home, LikeFolder, Logout, PlaylistFolder, PrivateFolder, WatchlistFolder } from '../../asset';
+import { useUserActions } from '../../context';
+import { useMediaQuery } from '../../utils';
 
 const Sidebar = () => {
     
     const mobileView = useMediaQuery(600);
+    const { state, signout } = useUserActions();
+    const { tokenPresent } = state;
 
     const MobileSidebar = () => {
         return(
@@ -19,18 +22,24 @@ const Sidebar = () => {
                 <Link to={'/'} className="btn-icon">
                     <PlaylistFolder width={32} height={32}/>
                 </Link>
-                <Link to={'/'} className="btn-icon">
+                <Link to={'watchlist'} className="btn-icon">
                     <WatchlistFolder width={32} height={32}/>
                 </Link>
-                <Link to={'/'} className="btn-icon">
+                <Link to={'history'} className="btn-icon">
                     <HistoryFolder width={32} height={32}/>
                 </Link>
-                <Link to={'/'} className="btn-icon">
-                    <Logout width={32} height={32}/>
-                </Link>
+                { tokenPresent
+                    ?   <button className="mobile-avatar btn-icon" onClick={signout}>
+                            <Logout width={32} height={32}/>
+                        </button>
+                    : " "
+                }
             </div>
             <Link to={'/'} className="btn-icon bottom-icon">
-                <PrivateFolder width={32} height={32}/>
+                { tokenPresent
+                    ? <AddFolder width={32} height={32}/>
+                    : <PrivateFolder width={32} height={32}/>
+                }
             </Link>
         </div>
         );
@@ -41,23 +50,26 @@ const Sidebar = () => {
             : <div className="sidebar">
                 <div className="icon-holder">
                     <Link to={'/'} className="btn-icon">
-                        <Home width={40} height={40} />
+                        <Home width={40} height={40}/>
                     </Link>
                     <Link to={'/'} className="btn-icon">
-                        <LikeFolder width={40} height={40} />
+                        <LikeFolder width={40} height={40}/>
                     </Link>
                     <Link to={'/'} className="btn-icon">
                         <PlaylistFolder width={40} height={40}/>
                     </Link>
-                    <Link to={'/'} className="btn-icon">
+                    <Link to={'watchlist'} className="btn-icon">
                         <WatchlistFolder width={40} height={40}/>
                     </Link>
-                    <Link to={'/'} className="btn-icon">
-                        <HistoryFolder width={40} height={40} stroke-width={2}/>
+                    <Link to={'history'} className="btn-icon">
+                        <HistoryFolder width={40} height={40}/>
                     </Link>
                 </div>
                 <Link to={'/'} className="btn-icon bottom-icon">
-                    <PrivateFolder width={40} height={40} />
+                    { tokenPresent
+                    ? <AddFolder width={40} height={40}/>
+                    : <PrivateFolder width={40} height={40}/>
+                    }
                 </Link>
             </div>}
         </>

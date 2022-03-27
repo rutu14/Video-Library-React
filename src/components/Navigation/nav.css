@@ -19,8 +19,19 @@
 }
   
 .login-btn {
+    display: inline-flex;    
+    align-items: center;
     margin: 0 6px;
     border-radius: 1.2rem;
+}
+
+.login-btn:hover {
+    color: var(--bg);
+    background-color: var(--info-text);
+}
+
+.login-btn-outline{
+    background-color: var(--bg);
 }
   
 .sidebar {	

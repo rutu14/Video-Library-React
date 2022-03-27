@@ -4,6 +4,7 @@
  * */
 
 import Images from "../../asset";
+import { v4 as uuid } from "uuid";
 
 export const videos = [
   {
@@ -234,7 +235,7 @@ export const videos = [
   {
     _id: uuid(),
     title: "ButterFly",
-    description: " ",
+    description: "Learn embroidering butterfly step by step.",
     creator: "AlphaEmb", 
     videoContent: Images.video26,  
     viewCounts: 10,

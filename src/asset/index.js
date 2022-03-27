@@ -1,3 +1,28 @@
+<<<<<<< Updated upstream
+=======
+import { ReactComponent as Logo } from './svg/logo.svg';
+import { ReactComponent as User } from './svg/user.svg';
+import { ReactComponent as Home } from './svg/home.svg';
+import { ReactComponent as Login } from './svg/login.svg';
+import { ReactComponent as Logout } from './svg/logout.svg';
+
+import { ReactComponent as AddFolder } from './svg/add_folder.svg';
+import { ReactComponent as PrivateFolder } from './svg/private_folder.svg';
+import { ReactComponent as LikeFolder } from './svg/like_folder.svg';
+import { ReactComponent as PlaylistFolder } from './svg/playlist_folder.svg';
+import { ReactComponent as WatchlistFolder } from './svg/watchlist_folder.svg';
+import { ReactComponent as HistoryFolder } from './svg/history_folder.svg';
+
+import { ReactComponent as InfoIcon } from './svg/info-icon.svg';
+import { ReactComponent as LikeIcon } from './svg/like-icon.svg';
+import { ReactComponent as PlayIcon } from './svg/play-icon.svg';
+import { ReactComponent as TimeIcon } from './svg/time-icon.svg';
+import { ReactComponent as UnlikeIcon } from './svg/unlike-icon.svg';
+import { ReactComponent as ViewIcon } from './svg/views-icon.svg';
+import { ReactComponent as AddIcon } from './svg/add-icon.svg';
+import { ReactComponent as DeleteIcon } from './svg/delete-icon.svg';
+
+>>>>>>> Stashed changes
 const Images = {
     homepage: require('./images/bg.jpg'),
 	
@@ -30,6 +55,9 @@ const Images = {
     video23: require('./images/video-preview (23).gif'),
     video24: require('./images/video-preview (24).gif'),
     video25: require('./images/video-preview (25).gif'),
+    video26: require('./images/video-preview (26).gif')
 };
 
+
 export default Images;
+export { Logo, User, Home, Login, Logout, AddFolder, PrivateFolder, LikeFolder, PlaylistFolder, WatchlistFolder, HistoryFolder, InfoIcon, LikeIcon, UnlikeIcon, TimeIcon, ViewIcon, PlayIcon, AddIcon, DeleteIcon }

@@ -1,0 +1,75 @@
+.load {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--primary-colour);
+    color: var(--btn-hover);
+    transform: scale(1.25, 1.25);
+    animation: load 2s infinite ease-in;
+}
+  
+.load::before, .load::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+}
+  
+.load::before {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--primary-colour);
+    color: var(--btn-hover);
+    animation: loadBefore 2s infinite ease-in;
+}
+  
+.load::after {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--primary-colour);
+    color: var(--btn-hover);
+    animation: loadAfter 2s infinite ease-in;
+}
+  
+@keyframes load {
+    0% {
+      transform: scale(1.25, 1.25);
+    }
+    50%,
+    60% {
+      transform: scale(0.8, 0.8);
+    }
+    100% {
+      transform: scale(1.25, 1.25);
+    }
+}
+  
+@keyframes loadBefore {
+    0% {
+      transform: translate(0) scale(0.7, 0.7);
+    }
+    50%,
+    60% {
+      transform: translate(-4rem) scale(1, 1);
+    }
+    100% {
+      transform: translate(0) scale(0.7, 0.7);
+    }
+}
+  
+@keyframes loadAfter {
+    0% {
+      transform: translate(0) scale(0.7, 0.7);
+    }
+    50%,
+    60% {
+      transform: translate(4rem) scale(1, 1);
+    }
+    100% {
+      transform: translate(0) scale(0.7, 0.7);
+    }
+}
+  

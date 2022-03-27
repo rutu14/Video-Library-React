@@ -1,17 +1,9 @@
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> c85959663d5a53dd328d4b6dae3b49080a3feefb
 import { ReactComponent as Logo } from './svg/logo.svg';
 import { ReactComponent as User } from './svg/user.svg';
 import { ReactComponent as Home } from './svg/home.svg';
 import { ReactComponent as Login } from './svg/login.svg';
 import { ReactComponent as Logout } from './svg/logout.svg';
-<<<<<<< HEAD
 
-=======
->>>>>>> c85959663d5a53dd328d4b6dae3b49080a3feefb
 import { ReactComponent as AddFolder } from './svg/add_folder.svg';
 import { ReactComponent as PrivateFolder } from './svg/private_folder.svg';
 import { ReactComponent as LikeFolder } from './svg/like_folder.svg';
@@ -19,7 +11,6 @@ import { ReactComponent as PlaylistFolder } from './svg/playlist_folder.svg';
 import { ReactComponent as WatchlistFolder } from './svg/watchlist_folder.svg';
 import { ReactComponent as HistoryFolder } from './svg/history_folder.svg';
 
-<<<<<<< HEAD
 import { ReactComponent as InfoIcon } from './svg/info-icon.svg';
 import { ReactComponent as LikeIcon } from './svg/like-icon.svg';
 import { ReactComponent as PlayIcon } from './svg/play-icon.svg';
@@ -29,10 +20,6 @@ import { ReactComponent as ViewIcon } from './svg/views-icon.svg';
 import { ReactComponent as AddIcon } from './svg/add-icon.svg';
 import { ReactComponent as DeleteIcon } from './svg/delete-icon.svg';
 
->>>>>>> Stashed changes
-=======
-
->>>>>>> c85959663d5a53dd328d4b6dae3b49080a3feefb
 const Images = {
     homepage: require('./images/bg.jpg'),
 	

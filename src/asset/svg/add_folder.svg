@@ -4,10 +4,10 @@ width="32" height="32">
   <title>Add PlayList</title>
   <desc>A line styled icon from Orion Icon Library.</desc>
   <path data-name="layer2"
-  d="M54 27.2V15H22V9H2v40.3A1.7 1.7 0 0 0 3.7 51h29.8" fill="none" stroke="#7066bd"
+  d="M54 27.2V15H22V9H2v40.3A1.7 1.7 0 0 0 3.7 51h29.8" fill="none" stroke="currentColor"
   stroke-miterlimit="10" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></path>
-  <circle data-name="layer1" cx="46" cy="41" r="16" fill="none" stroke="#7066bd"
+  <circle data-name="layer1" cx="46" cy="41" r="16" fill="none" stroke="currentColor"
   stroke-miterlimit="10" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"></circle>
-  <path data-name="layer1" fill="none" stroke="#7066bd" stroke-miterlimit="10"
+  <path data-name="layer1" fill="none" stroke="currentColor" stroke-miterlimit="10"
   stroke-width="2" d="M46 33v16m-8-8h16" stroke-linejoin="round" stroke-linecap="round"></path>
 </svg>

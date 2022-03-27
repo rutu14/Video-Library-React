@@ -1,2 +1,15 @@
 @import url("https://threadui.netlify.app/components/component.css");
-                    
+
+:root {
+  --primary-colour: #7066bd;
+  --btn-hover: #beb7f2;
+  --bg:#edf7ff;
+  --nav-shadow:#00000033;
+  --nav-link-hover-bg:#8d84d0;
+  --nav-link-hover-text:#e2e8f0;
+}
+
+body{
+  background-color: var(--bg);
+}
+                   

@@ -4,7 +4,7 @@ import useMediaQuery from '../../utils/mediaQuery';
 
 const Sidebar = () => {
     
-    const isMobile = useMediaQuery(600);
+    const mobileView = useMediaQuery(600);
 
     const MobileSidebar = () => {
         return(
@@ -37,8 +37,8 @@ const Sidebar = () => {
     }
 
     return(<>
-        {isMobile ? <MobileSidebar/>
-            : <div class="sidebar">
+        {mobileView ? <MobileSidebar/>
+            : <div className="sidebar">
                 <div className="icon-holder">
                     <Link to={'/'} className="btn-icon">
                         <Home width={40} height={40} />
@@ -56,7 +56,7 @@ const Sidebar = () => {
                         <HistoryFolder width={40} height={40} stroke-width={2}/>
                     </Link>
                 </div>
-                <Link to={'/'} className="btn-icon acc">
+                <Link to={'/'} className="btn-icon bottom-icon">
                     <PrivateFolder width={40} height={40} />
                 </Link>
             </div>}

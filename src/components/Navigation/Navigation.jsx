@@ -62,7 +62,6 @@ const Navigation = () => {
 				</ul>
 			</nav>
       	</header>
-		<Sidebar/>
 
 	</>
     );

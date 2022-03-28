@@ -1,15 +1,17 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Login, Logo, Logout, User } from '../../asset';
-import { Sidebar } from './Sidebar';
+import { useUserActions } from '../../context';
 import './nav.css';
 
 const Navigation = () => {
+    const { state, signout } = useUserActions();
+    const { tokenPresent } = state;
 	
 	const ShowDropdown = () => {
         return(
             <div id="dropdown" className="dropdown-menu">
-                <Link to={'/'} className="btn-link cp td text-center menu-option" role="button">
+                <Link to={'/'} className="btn-link cp td text-center menu-option" onClick={signout} role="button">
                    <Logout width={20} height={20}/> Logout
                 </Link>
             </div>        
@@ -32,14 +34,14 @@ const Navigation = () => {
     
     const LoginButton = () => {
         return (
-            <li>
-				<Link to={'/'} className="btn btn-primary outline login-btn" type="button">
+            <>
+				<Link to={'login'} className="btn btn-primary outline td cp login-btn login-btn-outline" type="button">
 					LOGIN
 				</Link>
-				<Link to={'/'} className="btn btn-primary login-btn" type="button">
+				<Link to={'signup'} className="btn btn-primary td cp login-btn" type="button">
 					SIGNUP
 				</Link>
-			</li> 
+            </>
         );
     }
   
@@ -52,14 +54,19 @@ const Navigation = () => {
 					CHITRAM
 				</h1>
 			</div> 
-			<Link to={'/'} className="btn btn-primary outline login-sign mobile-avatar" type="button">
-				<Login/>
-			</Link> 
+            
+            {tokenPresent
+            ?   <div className="avatar avatar-lg user mobile-avatar"><User/></div>  
+            :   <Link to={'login'} className="btn btn-primary outline login-sign mobile-avatar" type="button">
+                    <Login/>
+                </Link>
+            } 
+			 
 			<nav className="nav-items">
-				<ul>
-					{/* <LoginButton/> */}
-					<DropdownAvatar/>
-				</ul>
+                {tokenPresent
+                ?   <DropdownAvatar/>
+                :   <LoginButton/>
+                }					
 			</nav>
       	</header>
 

@@ -1,5 +1,5 @@
 import { AddIcon, InfoIcon, LikeIcon, PlayIcon, TimeIcon, ViewIcon, WatchlistFolder } from '../../asset';
-import { timeInHoursAndMinutes } from '../../utils/timeConversion';
+import { timeInHoursAndMinutes } from '../../utils';
 import './homecard.css'
 
 const HomeCard = ({cardValue}) => {

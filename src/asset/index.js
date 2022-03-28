@@ -19,6 +19,7 @@ import { ReactComponent as UnlikeIcon } from './svg/unlike-icon.svg';
 import { ReactComponent as ViewIcon } from './svg/views-icon.svg';
 import { ReactComponent as AddIcon } from './svg/add-icon.svg';
 import { ReactComponent as DeleteIcon } from './svg/delete-icon.svg';
+import { ReactComponent as CloseIcon } from './svg/close-icon.svg';
 
 const Images = {
     homepage: require('./images/bg.jpg'),
@@ -57,4 +58,4 @@ const Images = {
 
 
 export default Images;
-export { Logo, User, Home, Login, Logout, AddFolder, PrivateFolder, LikeFolder, PlaylistFolder, WatchlistFolder, HistoryFolder, InfoIcon, LikeIcon, UnlikeIcon, TimeIcon, ViewIcon, PlayIcon, AddIcon, DeleteIcon }
+export { Logo, User, Home, Login, Logout, AddFolder, PrivateFolder, LikeFolder, PlaylistFolder, WatchlistFolder, HistoryFolder, InfoIcon, LikeIcon, UnlikeIcon, TimeIcon, ViewIcon, PlayIcon, AddIcon, DeleteIcon, CloseIcon }

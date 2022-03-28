@@ -1,0 +1,44 @@
+import { CloseIcon } from "../../asset";
+import './alert.css'
+
+const Alert = ({ action, customClass, closefn, title, description }) => {
+    const alertTypes = [
+        {
+            type: 'success',
+            class: 'alert-success',
+            icon: 'bi-check2-circle'
+        },{
+            type: 'warning',
+            class: 'alert-warning',
+            icon: 'bi-exclamation-circle'
+        },{
+            type: 'info',
+            class: 'alert-info',
+            icon: 'bi-info-circle'
+        },{
+            type: 'error',
+            class: 'alert-error',
+            icon: 'bi-x-circle'
+        }
+    ]
+    return(<>
+        {alertTypes.map( (alert) => {
+            if(action === alert.type){
+                return(
+                    <div key={alert.type} className={`alert ${alert.class} ${customClass || " "}`}>        
+                        <span className="alert-icon"><i className={`bi ${alert.icon}`}></i></span>
+                        <div className="alert-content ">
+                            <h1 className="alert-title">{title}</h1>
+                            <h4 className="alert-description">{description}</h4>
+                        </div>
+                        <span className="alert-icon end-position cp" onClick={closefn} role={'button'}>
+                            <CloseIcon width={38} height={38}/>
+                        </span>
+                    </div>
+                )
+            }          
+        })} </>       
+    );
+}
+
+export {Alert}

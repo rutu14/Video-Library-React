@@ -1,8 +1,33 @@
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router';
 import { AddIcon, InfoIcon, LikeIcon, PlayIcon, TimeIcon, ViewIcon, WatchlistFolder } from '../../asset';
-import { timeInHoursAndMinutes } from '../../utils';
+import { useUserActions } from '../../context';
+import { timeInHoursAndMinutes, useModalOperations } from '../../utils';
+import { AddtoPlaylist } from '../../components';
 import './homecard.css'
 
 const HomeCard = ({cardValue}) => {
+
+    const navigate = useNavigate();
+    const { state:user } = useUserActions();
+    const { tokenPresent } = user;   
+    const [ userCheck, setUserCheck ] = useState(true);
+    const { isOpen, closeOperation, openOperation } = useModalOperations(); 
+
+    const verify = (operationToPerform) => {
+        if(tokenPresent){
+            operationToPerform();
+        }else{
+            setUserCheck(false)
+        }
+    }
+
+    useEffect( () => {
+        if(!userCheck){
+            navigate('login')
+        }
+    },[ userCheck ]);
+
     const{
         _id,
         title,
@@ -14,7 +39,7 @@ const HomeCard = ({cardValue}) => {
 
     const convertedTime = timeInHoursAndMinutes(time);
 
-    return(
+    return(<>
         <div className="card card-box-shadow m-t20 home-card">
             <span className='play-action cp'>
                 <PlayIcon width={48} height={48} />
@@ -34,16 +59,18 @@ const HomeCard = ({cardValue}) => {
                 <button className='btn aside-btns cp'>
                     <LikeIcon width={29} height={29} />
                 </button>
-                <button className='btn aside-btns cp'>
+                <button className='btn aside-btns cp' onClick={() => verify(openOperation)}>
                     <AddIcon width={29} height={29} />
                 </button>
             </div>
+            {isOpen && ( <AddtoPlaylist close={closeOperation} cardValue={cardValue} /> )}
             <div className='card-contents-below'>
                 <ViewIcon width={23} height={23}/>
                 <span className='view-count-text'>{viewCounts}K</span>
                 <span className='creator-text'> | {creator}</span>
             </div>
         </div> 
+        </>
     );
 }
 

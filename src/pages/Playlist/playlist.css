@@ -1,0 +1,114 @@
+.modal-backdrop{
+    visibility: visible;
+    opacity: 1;
+    z-index: 4;
+}
+
+.card-detail{  
+    display: flex;
+    font-size: 1.5rem;
+    border-top-left-radius: 1.6rem;
+    border-top-right-radius: 1.6rem;
+    color: var(--home-cards-contents);
+    background-color: var(--playlist-card-bg);
+    width: inherit;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.card-text{
+    display: inline-flex;
+    flex-direction: column;
+    overflow-x: clip;
+    white-space: nowrap;
+    padding: 1.5rem 1.2rem;
+}
+
+.card-text-title{
+    overflow-x: clip;
+    color: inherit;
+}
+
+.card-text-title:active,.card-text-title:visited{
+    color: inherit;
+}
+
+.card-video{
+    color: var(--input-border-hover);    
+    display: inline-flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.card-delete{
+    color: var(--black);
+    margin-left: auto;
+    margin-right: 1rem;
+    border: none;
+    min-width: 5rem;
+    min-height: 5rem;
+}
+
+.card-delete:hover ,.video-section-btn:hover{
+    background-color: var(--delete-hover);
+    color: var(--white);
+    border-color: var(--delete-hover);
+}
+
+.card-video-display{
+    border-radius: 10px;
+    width: 18rem;
+    height: 10rem;
+    transform: translate(-10.9rem, -4.7rem);
+    position: absolute;
+    filter: brightness(0.5);
+}
+
+.card-video-text{
+    position: absolute;
+    transform: translate(8.3rem, -4.2rem);
+    font-size: 2.5rem;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video-card{
+    height: 25rem;
+}
+
+.video-section{
+    display: flex;
+    justify-content: space-between;
+}
+
+.video-section-title{
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.video-section-btn{
+    height: fit-content;
+    font-size: 1.8rem;
+}
+
+.video-section-text{
+    margin-right: 5px;
+}
+
+.video-card-img{
+    border-radius: 10px;
+    width: 25rem;
+    height: 20rem; 
+}
+
+.video-card-delete{
+    margin-top: 5px;
+    min-height: unset;
+    min-width: unset;
+    padding: 5px;
+}
+
+.video-card-time{
+    transform: translate(1rem, 1rem);
+}

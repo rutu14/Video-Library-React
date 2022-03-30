@@ -2,9 +2,11 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Login, Logo, Logout, User } from '../../asset';
 import { useUserActions } from '../../context';
+import { useMediaQuery } from '../../utils';
 import './nav.css';
 
 const Navigation = () => {
+    const mobileView = useMediaQuery(600);
     const { state, signout } = useUserActions();
     const { tokenPresent } = state;
 	
@@ -54,13 +56,13 @@ const Navigation = () => {
 					CHITRAM
 				</h1>
 			</div> 
-            
-            {tokenPresent
+            {mobileView 
+            ? tokenPresent
             ?   <div className="avatar avatar-lg user mobile-avatar"><User/></div>  
             :   <Link to={'login'} className="btn btn-primary outline login-sign mobile-avatar" type="button">
                     <Login/>
                 </Link>
-            } 
+            : null  } 
 			 
 			<nav className="nav-items">
                 {tokenPresent

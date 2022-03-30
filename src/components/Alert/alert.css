@@ -2,3 +2,8 @@
     position: absolute;
     z-index: 2;
 }
+
+.add-playlist-error{
+    top: 6%;
+    left: 30%;
+}

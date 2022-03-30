@@ -1,3 +1,4 @@
 import { userReducer } from "./userReducer";
+import { playlistReducer } from "./playlistReducer";
 
-export { userReducer }
+export { userReducer, playlistReducer }

@@ -82,6 +82,65 @@
     white-space: nowrap;
 }
 
+.playlist-btn{
+    margin: 5px 0;
+    max-height: 3rem;
+    overflow-y: hidden;
+    max-width: inherit;
+}
+
+.add-to-playlist-modal{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem 0 2rem 0;
+}
+
+.add-to-playlist-backdrop{
+    padding: inherit;
+}
+
+.add-to-playlist-dialog{
+    width: fit-content;
+}
+
+.add-to-playlist-btn-section{
+    display: grid;
+    padding: 0 0 1rem 0;
+}
+
+.close-modal-add-playlist {
+    position: unset;
+    min-width: unset;
+    min-height: unset;
+    transform: unset;
+    margin-left: 90%;
+    width: 3rem;
+    height: 3rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: unset;
+    padding: unset;
+}
+
+.add-to-playlist-btn-border{
+    border-color: var(--add-to-playlist-border);
+    color: var(--add-to-playlist-color);
+}
+
+.add-section{
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.6rem;
+    color: var(--primary-colour);
+}
+
+.add-section-text{
+    margin-left: 5px;
+}
+
+
 @media only screen and (max-width: 768px) {
     .play-action {
         transform: translate(58px, 25px);

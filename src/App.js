@@ -1,7 +1,7 @@
 import './App.css';
 import MockmanEs from 'mockman-js';
 import { Route, Routes } from 'react-router';
-import { Home, LoginPage, SignUpPage } from './pages';
+import { Home, LoginPage, Playlist, PlaylistIndividual, SignUpPage } from './pages';
 import { PageLayout, AuthPageLayout, PrivateRoute } from './utils';
 
 function App() {
@@ -22,6 +22,8 @@ function App() {
 		<Route element={<PrivateRoute/>}>
 			<Route path='watchlist' element={<Home/>}/>
 			<Route path='history' element={<Home/>}/>
+			<Route path='playlist' element={<Playlist/>}/>
+			<Route path='playlist/:playlistId' element={<PlaylistIndividual/>}/>
 		</Route>
 
 	</Routes>

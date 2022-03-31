@@ -19,7 +19,7 @@ const Sidebar = () => {
                 <Link to={'/'} className="btn-icon">
                     <LikeFolder width={32} height={32}/>
                 </Link>
-                <Link to={'/'} className="btn-icon">
+                <Link to={'playlist'} className="btn-icon">
                     <PlaylistFolder width={32} height={32}/>
                 </Link>
                 <Link to={'watchlist'} className="btn-icon">
@@ -55,7 +55,7 @@ const Sidebar = () => {
                     <Link to={'/'} className="btn-icon">
                         <LikeFolder width={40} height={40}/>
                     </Link>
-                    <Link to={'/'} className="btn-icon">
+                    <Link to={'playlist'} className="btn-icon">
                         <PlaylistFolder width={40} height={40}/>
                     </Link>
                     <Link to={'watchlist'} className="btn-icon">
@@ -63,14 +63,14 @@ const Sidebar = () => {
                     </Link>
                     <Link to={'history'} className="btn-icon">
                         <HistoryFolder width={40} height={40}/>
+                    </Link>                
+                    <Link to={'/'} className="btn-icon">
+                        { tokenPresent
+                        ? <AddFolder width={40} height={40}/>
+                        : <PrivateFolder width={40} height={40}/>
+                        }
                     </Link>
                 </div>
-                <Link to={'/'} className="btn-icon bottom-icon">
-                    { tokenPresent
-                    ? <AddFolder width={40} height={40}/>
-                    : <PrivateFolder width={40} height={40}/>
-                    }
-                </Link>
             </div>}
         </>
     );

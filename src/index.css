@@ -14,6 +14,11 @@
   --time-info:#798897bf;
 
   --input-box:#00000047;
+  --delete-hover: #ff4c0a;
+
+  --playlist-card-bg: #8d84d052;
+  --add-to-playlist-border: #3e3662;
+  --add-to-playlist-color: #2f3048;
 }
 
 body{

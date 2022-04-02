@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { AddFolder, HistoryFolder, Home, LikeFolder, Logout, PlaylistFolder, PrivateFolder, WatchlistFolder } from '../../asset';
+import { HistoryFolder, Home, LikeFolder, Logout, PlaylistFolder, WatchlistFolder } from '../../asset';
 import { useUserActions } from '../../context';
 import { useMediaQuery } from '../../utils';
 
@@ -16,7 +16,7 @@ const Sidebar = () => {
                 <Link to={'/'} className="btn-icon">
                     <Home width={32} height={32}/>
                 </Link>
-                <Link to={'/'} className="btn-icon">
+                <Link to={'liked'} className="btn-icon">
                     <LikeFolder width={32} height={32}/>
                 </Link>
                 <Link to={'playlist'} className="btn-icon">
@@ -35,12 +35,6 @@ const Sidebar = () => {
                     : " "
                 }
             </div>
-            <Link to={'/'} className="btn-icon bottom-icon">
-                { tokenPresent
-                    ? <AddFolder width={32} height={32}/>
-                    : <PrivateFolder width={32} height={32}/>
-                }
-            </Link>
         </div>
         );
     }
@@ -52,7 +46,7 @@ const Sidebar = () => {
                     <Link to={'/'} className="btn-icon">
                         <Home width={40} height={40}/>
                     </Link>
-                    <Link to={'/'} className="btn-icon">
+                    <Link to={'liked'} className="btn-icon">
                         <LikeFolder width={40} height={40}/>
                     </Link>
                     <Link to={'playlist'} className="btn-icon">
@@ -64,12 +58,6 @@ const Sidebar = () => {
                     <Link to={'history'} className="btn-icon">
                         <HistoryFolder width={40} height={40}/>
                     </Link>                
-                    <Link to={'/'} className="btn-icon">
-                        { tokenPresent
-                        ? <AddFolder width={40} height={40}/>
-                        : <PrivateFolder width={40} height={40}/>
-                        }
-                    </Link>
                 </div>
             </div>}
         </>

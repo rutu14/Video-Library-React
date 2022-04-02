@@ -1,10 +1,10 @@
 import axios from "axios"
 import React, { createContext, useContext, useReducer } from "react";
-import { likedVideoReducer } from "../reducer";
+import { historyVideoReducer } from "../reducer";
 
 const defaultValue = {
     loader: false,
-    historyVideoInfo: null,
+    historyVideoInfo: [],
     error: false,
     errorMsg: null
 };
@@ -13,7 +13,7 @@ const HistoryVideoContext = createContext(defaultValue);
 
 const HistoryVideoProvider = ({ children }) => {
 
-    const [ state, dispatch  ] = useReducer(likedVideoReducer, defaultValue);
+    const [ state, dispatch  ] = useReducer(historyVideoReducer, defaultValue);
 
     const getHistoryVideo = async () => {
         try {
@@ -21,8 +21,8 @@ const HistoryVideoProvider = ({ children }) => {
             const token = localStorage.getItem("token");
             const config = { headers: { 'authorization': token } };
             const { data } = await axios.get( '/api/user/history', config)
-            console.log( data )
-            dispatch({ type: "HISTORY_VIDEO_SUCCESS", payload: data.history.history })
+            console.log( data.history )
+            dispatch({ type: "HISTORY_VIDEO_SUCCESS", payload: data.history })
         } catch (error) {
             dispatch({ type: "HISTORY_VIDEO_ERROR", payload: error })
         }
@@ -34,8 +34,8 @@ const HistoryVideoProvider = ({ children }) => {
           const token = localStorage.getItem("token");
           const config = { headers: { 'authorization': token } };
           const { data } = await axios.post( '/api/user/history',{ video }, config )
-          console.log( data )
-          dispatch({ type: "HISTORY_VIDEO_SUCCESS", payload: data.history.history })
+          console.log( data.history )
+          dispatch({ type: "HISTORY_VIDEO_SUCCESS", payload: data.history })
         } catch (error) {
             dispatch({ type: "HISTORY_VIDEO_ERROR", payload: error })
         }
@@ -53,7 +53,7 @@ const HistoryVideoProvider = ({ children }) => {
         }
     }
 
-    const deleteAllHistoryVideo = async ( videoId ) => {
+    const deleteAllHistoryVideo = async ( ) => {
         try {
             dispatch({ type: "HISTORY_VIDEO_REQUEST" })
             const token = localStorage.getItem("token");

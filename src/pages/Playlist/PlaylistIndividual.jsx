@@ -23,7 +23,7 @@ const PlaylistIndividual = () => {
     }
 
     return(
-        <main className="main-container">
+        <main className="main-container page-align">
 
             {loader && <Loader/>}
             <section className="video-section">
@@ -37,7 +37,7 @@ const PlaylistIndividual = () => {
                 </button>
             </section>
 
-            <section className="grid-4-cols m-t20 " >                
+            <section className="grid-3-cols m-t20 home-page-grid" >                
                 {videos && videos.map((video)=>( <VideoCard key={video._id} videoLength={videos.length} playlistId={playlistId} deletePlaylistVideo={deletePlaylistVideo} video={video}/> ))}
             </section>
                 

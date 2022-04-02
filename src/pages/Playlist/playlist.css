@@ -74,7 +74,7 @@
 }
 
 .video-card{
-    height: 25rem;
+    height: 26rem;
 }
 
 .video-section{
@@ -97,18 +97,38 @@
 }
 
 .video-card-img{
-    border-radius: 10px;
+    border-radius: 4px;
     width: 25rem;
-    height: 20rem; 
+    height: 20rem;
+    margin-top: 1rem;
+}
+
+.video-card-btn-section{
+    display: inline-flex;
+    align-items: center;
 }
 
 .video-card-delete{
-    margin-top: 5px;
+    margin: unset;
     min-height: unset;
     min-width: unset;
-    padding: 5px;
+    padding: 3px;
 }
 
 .video-card-time{
-    transform: translate(1rem, 1rem);
+    transform: translate(1rem, 2rem);
+}
+
+.video-card-info{
+    width: fit-content;
+    transform: unset;
+    padding: 0 0 0 6px;
+}
+
+.video-card-details{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 6px;
+    width: inherit;
 }

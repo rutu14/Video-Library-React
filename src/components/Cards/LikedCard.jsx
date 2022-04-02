@@ -1,11 +1,10 @@
-import { useNavigate } from "react-router";
-import { DeleteIcon, LikeIcon, TimeIcon, ViewIcon } from "../../asset";
+import { LikeIcon, TimeIcon, ViewIcon } from "../../asset";
 import { timeInHoursAndMinutes, useLikeStatus } from "../../utils";
 import { useEffect } from "react";
 import { useLikedVideoActions } from "../../context";
 
-const VideoCard = ({ video, videoLength, playlistId, deletePlaylistVideo }) => {
-    const navigate = useNavigate();
+const LikedCard = ({ video }) => {
+
     const{
         _id,
         title,
@@ -16,15 +15,6 @@ const VideoCard = ({ video, videoLength, playlistId, deletePlaylistVideo }) => {
         viewCounts } = video;
 
     const convertedTime = timeInHoursAndMinutes(time);
-
-    const deleteVideo = () => {
-        if ( videoLength !== 1){
-            deletePlaylistVideo( playlistId, _id );
-        }else{
-            deletePlaylistVideo( playlistId, _id );
-            navigate('/playlist');
-        }
-    } 
 
     const { state:likedVideo } = useLikedVideoActions(); 
     const { likedVideoInfo } = likedVideo;
@@ -57,14 +47,11 @@ const VideoCard = ({ video, videoLength, playlistId, deletePlaylistVideo }) => {
                 <section className="video-card-btn-section">
                     <button className={`btn aside-btns cp ${colorChange}`} onClick={handleLikedVideo}>
                             <LikeIcon width={29} height={29} />
-                    </button>
-                    <button className="btn card-delete video-card-delete cp" onClick={deleteVideo} >
-                        <DeleteIcon width={30} height={30}/>
-                    </button>  
+                    </button> 
                 </section> 
             </section>                        
         </div>
     );
 }
 
-export { VideoCard }
+export { LikedCard }

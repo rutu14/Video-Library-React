@@ -19,6 +19,7 @@
   --playlist-card-bg: #8d84d052;
   --add-to-playlist-border: #3e3662;
   --add-to-playlist-color: #2f3048;
+  --like-color:#a52a2a;
 }
 
 body{
@@ -50,9 +51,21 @@ body{
   padding: 2rem 4rem;
 }
 
+.loader-section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 7rem);
+}
+
 @media only screen and (max-width: 600px) {
     .login-main-container{
-		padding: 0;
+		  padding: 0;
+    }
+    .page-align{
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
 }

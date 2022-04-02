@@ -22,7 +22,6 @@ const PlaylistProvider = ({ children }) => {
             const token = localStorage.getItem("token");
             const config = { headers: { 'authorization': token } };
             const { data } = await axios.get( '/api/user/playlists', config );
-            console.log( data.playlists )
             dispatch({ type: "PLAYLIST_SUCCESS", payload: data.playlists })          
         } catch (error) {
             dispatch({ type: "PLAYLIST_ERROR", payload: error.response.data.errors[0] })
@@ -82,7 +81,6 @@ const PlaylistProvider = ({ children }) => {
             const config = { headers: { 'authorization': token } };
             const { data } = await axios.post( `/api/user/playlists/${playlistId}`,{ video: video }, config );
             dispatch({ type: "PLAYLIST_VIDEO_SUCCESS", payload: data.playlist })     
-            
         } catch (error) {
             console.log(error.response.data)
             dispatch({ type: "PLAYLIST_ERROR", payload: error })

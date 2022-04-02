@@ -14,7 +14,7 @@ const PlaylistCard = ({ getPlaylist, deletePlaylist, playlist }) => {
     }
 
     return(
-        <div className="card card-box-shadow home-card">
+        <div className="card card-box-shadow playlist-card">
             <div className='card-detail'>
                 <section className="card-text">
                     { videos.length !== 0 

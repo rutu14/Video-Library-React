@@ -9,5 +9,6 @@ import { CreatePlaylist } from "./Cards/CreatePlaylist";
 import { VideoCard } from "./Cards/VideoCard";
 import { LikedCard } from "./Cards/LikedCard";
 import { HistoryCard } from "./Cards/HistoryCard";
+import { WatchLaterCard } from "./Cards/WatchLaterCard";
 
-export { Navigation, Sidebar, Loader, HomeCard, Alert, PlaylistCard, AddtoPlaylist, CreatePlaylist, VideoCard, LikedCard, HistoryCard };
+export { Navigation, Sidebar, Loader, HomeCard, Alert, PlaylistCard, AddtoPlaylist, CreatePlaylist, VideoCard, LikedCard, HistoryCard, WatchLaterCard };

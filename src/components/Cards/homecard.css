@@ -3,39 +3,51 @@
     height: 20rem;
     border-radius: 16px;
     background-color: var(--home-card-bg);
+    display: grid;
+    grid-template-columns: 42.5% 42.5% 15%;
+    grid-template-rows: 80% 20%;
+    grid-template-areas:
+        "image image card-aside"
+        "card-below card-below card-aside";
 }
 
 .video-part{
     border-radius: 15px;
     width: 22rem;
     height: 18rem;
-    transform: translate(-10px, -18px);
-    position: absolute;
+    transform: translate(-7px, -20px);
+    grid-area: image;
 }
 
 .play-action{
-    position: absolute;
     padding: 10px;
-    transform: translate(75px, 45px);
+    transform: translate(-37px, 41px);
     z-index: 2;
     color: var(--warning-background);
     background-color: var(--play-action);
     backdrop-filter: blur(3px);
     border: none;
     border-radius: 15px;
+    width: 68px;
+    height: 71px;
+    grid-column: 2;
+    grid-row: 1;
 }
 
 .time-info{
-    position: absolute;
     display: inline-flex;
     align-items: center;
     z-index: 3;
     padding: 2px 5px;
     font-size: 1.3rem;
     border-radius: 4px;
-    transform: translate(130px, 130px);
+    transform: translate(-69px,-30px);
     color: var(--rating-checked);
     background-color: var(--time-info);
+    width: 62px;
+    height: 20px;
+    grid-column: 3;
+    grid-row: 2;
 }
 
 .time-value{
@@ -43,24 +55,23 @@
 }
 
 .card-contents-below{
-    transform: translate(10px, 165px);
     display: flex;
     align-items: center;
     padding: 0 1.5rem;
     font-size: 1.5rem;
     color: var(--home-cards-contents);
     height: 3.8rem;
+    grid-area: card-below;
 }
 
 .card-contents-aside{
-    position: absolute;
-    transform: translate(210px, 0px);
     height: inherit;
     width: 3.6rem;
     display: inline-flex;
     flex-direction: column;
     align-items: center;
     padding: 8px 0;
+    grid-area: card-aside;
 }
 
 .aside-btns{
@@ -143,35 +154,4 @@
 
 .likeColor{
     color: var(--like-color);
-}
-
-
-@media only screen and (max-width: 768px) {
-    .play-action {
-        transform: translate(58px, 25px);
-    }
-    .time-info{
-        transform: translate(118px, 120px);
-    }
-    .card-contents-aside{
-        transform: translate(195px, 0px);
-    }
-    .card-contents-below{
-        transform: translate(10px, 150px);
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    .play-action {
-        transform: translate(56px, 20px);
-    }
-    .time-info{
-        transform: translate(112px, 110px);
-    }
-    .card-contents-aside{
-        transform: translate(185px, 0px);
-    }
-    .card-contents-below{
-        transform: translate(10px, 140px);
-    }
 }

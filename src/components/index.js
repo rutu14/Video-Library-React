@@ -7,6 +7,7 @@ import { PlaylistCard } from "./Cards/PlaylistCard";
 import { AddtoPlaylist } from "./Cards/AddtoPlaylist";
 import { CreatePlaylist } from "./Cards/CreatePlaylist";
 import { VideoCard } from "./Cards/VideoCard";
+import { LikedCard } from "./Cards/LikedCard";
+import { HistoryCard } from "./Cards/HistoryCard";
 
-
-export { Navigation, Sidebar, Loader, HomeCard, Alert, PlaylistCard, AddtoPlaylist, CreatePlaylist, VideoCard };
+export { Navigation, Sidebar, Loader, HomeCard, Alert, PlaylistCard, AddtoPlaylist, CreatePlaylist, VideoCard, LikedCard, HistoryCard };

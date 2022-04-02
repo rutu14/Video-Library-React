@@ -16,11 +16,21 @@ const Playlist = () => {
     },[]);
 
     return(
-        <main className="main-container">
-            <button className="btn add-section cp" onClick={openOperation}>
-                <AddFolder width={30} height={30} /> 
-                <span className="add-section-text">Add Playlist</span>
-            </button>
+        <main className="main-container">            
+            <section className="video-section">
+                <section className="video-section-title">
+                    <h3 className="text3 medium text-capitalize">View your Playlists</h3>
+                </section>
+                <button className="btn add-section cp" onClick={openOperation}>
+                    <AddFolder width={30} height={30} /> 
+                    <span className="add-section-text">Add Playlist</span>
+                </button>
+            </section>
+
+            {loader && <section className="loader-section"><Loader/></section>}
+
+            { emptyPage && <section className="text3 light loader-section">Add Playlists to play ▶</section>} 
+
 
             {isOpen && <CreatePlaylist close={closeOperation} /> }
 

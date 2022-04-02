@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { AddIcon, InfoIcon, LikeIcon, PlayIcon, TimeIcon, ViewIcon, WatchlistFolder } from '../../asset';
-import { useHistoryVideoActions, useLikedVideoActions, useUserActions } from '../../context';
+import { useHistoryVideoActions, useLikedVideoActions, useUserActions, useWatchLaterActions } from '../../context';
 import { timeInHoursAndMinutes, useModalOperations, useLikeStatus } from '../../utils';
 import { AddtoPlaylist } from '../../components';
 import './homecard.css';
@@ -27,6 +27,8 @@ const HomeCard = ({cardValue}) => {
     const { state:likedVideo } = useLikedVideoActions(); 
     const { likedVideoInfo } = likedVideo;
     const { addHistoryVideo } = useHistoryVideoActions();
+    const { addWatchLater } = useWatchLaterActions();
+
 
     const { isOpen, closeOperation, openOperation } = useModalOperations(); 
     const { colorChange, setColorChange, likedStatus } = useLikeStatus();
@@ -50,6 +52,13 @@ const HomeCard = ({cardValue}) => {
         const user = verifyUser();
         if(user){
             likedStatus(cardValue,_id)
+        }
+    }
+
+    const handleWatchLater = () => {
+        const user = verifyUser();
+        if(user){
+            addWatchLater(cardValue);
         }
     }
 
@@ -80,7 +89,7 @@ const HomeCard = ({cardValue}) => {
                 <button className='btn aside-btns cp'>
                     <InfoIcon width={29} height={29} title={description} />
                 </button>
-                <button className='btn aside-btns cp'>
+                <button className='btn aside-btns cp' onClick={handleWatchLater}>
                     <WatchlistFolder width={29} height={29} />
                 </button>
                 <button className={`btn aside-btns cp ${colorChange}`} onClick={handleLikedVideo}>

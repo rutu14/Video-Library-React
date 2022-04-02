@@ -21,6 +21,7 @@
     color: var(--warning-background);
     background-color: var(--play-action);
     backdrop-filter: blur(3px);
+    border: none;
     border-radius: 15px;
 }
 
@@ -138,6 +139,10 @@
 
 .add-section-text{
     margin-left: 5px;
+}
+
+.likeColor{
+    color: var(--like-color);
 }
 
 

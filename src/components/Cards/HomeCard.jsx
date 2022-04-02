@@ -1,32 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { AddIcon, InfoIcon, LikeIcon, PlayIcon, TimeIcon, ViewIcon, WatchlistFolder } from '../../asset';
-import { useUserActions } from '../../context';
-import { timeInHoursAndMinutes, useModalOperations } from '../../utils';
+import { useHistoryVideoActions, useLikedVideoActions, useUserActions } from '../../context';
+import { timeInHoursAndMinutes, useModalOperations, useLikeStatus } from '../../utils';
 import { AddtoPlaylist } from '../../components';
-import './homecard.css'
+import './homecard.css';
 
 const HomeCard = ({cardValue}) => {
-
-    const navigate = useNavigate();
-    const { state:user } = useUserActions();
-    const { tokenPresent } = user;   
-    const [ userCheck, setUserCheck ] = useState(true);
-    const { isOpen, closeOperation, openOperation } = useModalOperations(); 
-
-    const verify = (operationToPerform) => {
-        if(tokenPresent){
-            operationToPerform();
-        }else{
-            setUserCheck(false)
-        }
-    }
-
-    useEffect( () => {
-        if(!userCheck){
-            navigate('login')
-        }
-    },[ userCheck ]);
 
     const{
         _id,
@@ -39,11 +19,58 @@ const HomeCard = ({cardValue}) => {
 
     const convertedTime = timeInHoursAndMinutes(time);
 
+    const navigate = useNavigate();    
+    const [ userCheck, setUserCheck ] = useState(true);
+
+    const { state:user } = useUserActions();
+    const { tokenPresent } = user; 
+    const { state:likedVideo } = useLikedVideoActions(); 
+    const { likedVideoInfo } = likedVideo;
+    const { addHistoryVideo } = useHistoryVideoActions();
+
+    const { isOpen, closeOperation, openOperation } = useModalOperations(); 
+    const { colorChange, setColorChange, likedStatus } = useLikeStatus();
+
+    useEffect( () => {
+        if(!userCheck){
+            navigate('login')
+        }
+    },[ userCheck ]);
+
+    const verifyUser = () => tokenPresent ? true : setUserCheck(false);
+
+    const handleAddtoPlaylist = () => {
+        const user = verifyUser();
+        if ( user ){
+            openOperation();
+        }
+    }
+    
+    const handleLikedVideo = () => {
+        const user = verifyUser();
+        if(user){
+            likedStatus(cardValue,_id)
+        }
+    }
+
+    const handleHistory = () => {
+        if(tokenPresent){
+            addHistoryVideo(cardValue);
+        }
+    }
+
+    useEffect( () =>{
+        if(likedVideoInfo){
+            const matchFound = likedVideoInfo.findIndex( (video) => video._id === _id );
+            { matchFound !== -1 ? setColorChange('likeColor') : setColorChange(" ") };
+        }
+    },[])
+
     return(<>
         <div className="card card-box-shadow m-t20 home-card">
-            <span className='play-action cp'>
+            <button className='btn play-action cp' onClick={handleHistory} >
                 <PlayIcon width={48} height={48} />
-            </span>
+            </button>
             <span className='time-info'>
                 <TimeIcon width={14} height={14}/>
                 <span className='time-value'>{convertedTime}</span>
@@ -56,10 +83,10 @@ const HomeCard = ({cardValue}) => {
                 <button className='btn aside-btns cp'>
                     <WatchlistFolder width={29} height={29} />
                 </button>
-                <button className='btn aside-btns cp'>
+                <button className={`btn aside-btns cp ${colorChange}`} onClick={handleLikedVideo}>
                     <LikeIcon width={29} height={29} />
                 </button>
-                <button className='btn aside-btns cp' onClick={() => verify(openOperation)}>
+                <button className='btn aside-btns cp'  onClick={handleAddtoPlaylist}>
                     <AddIcon width={29} height={29} />
                 </button>
             </div>

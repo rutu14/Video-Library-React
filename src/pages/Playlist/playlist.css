@@ -4,6 +4,14 @@
     z-index: 4;
 }
 
+
+.playlist-card{
+    width: 25rem;
+    height: 20rem;
+    border-radius: 16px;
+    background-color: var(--home-card-bg);
+}
+
 .card-detail{  
     display: flex;
     font-size: 1.5rem;
@@ -74,7 +82,16 @@
 }
 
 .video-card{
+    width: 25rem;
     height: 26rem;
+    border-radius: 16px;
+    background-color: var(--home-card-bg);
+    display: grid;
+    grid-template-rows: 80% 20%;
+    grid-template-areas:
+        "videoCard-image"
+        "videoCard-below";
+    
 }
 
 .video-section{
@@ -101,6 +118,7 @@
     width: 25rem;
     height: 20rem;
     margin-top: 1rem;
+    grid-area: videoCard-image;
 }
 
 .video-card-btn-section{
@@ -115,10 +133,6 @@
     padding: 3px;
 }
 
-.video-card-time{
-    transform: translate(1rem, 2rem);
-}
-
 .video-card-info{
     width: fit-content;
     transform: unset;
@@ -131,4 +145,12 @@
     justify-content: center;
     padding-top: 6px;
     width: inherit;
+    grid-area: videoCard-below;
+}
+
+@media only screen and (max-width: 600px) {
+    .video-section{
+        flex-direction: column;
+        align-items: center;
+    }
 }

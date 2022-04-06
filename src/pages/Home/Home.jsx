@@ -12,7 +12,7 @@ const Home = () => {
         <main className="main-container home-page">            
         
             {loader && <Loader/>}
-            <section className="grid-3-cols home-page-grid">
+            <section className="grid-3-cols home-contents-gap home-page-grid">
                 {info && info.map( (details) => (<HomeCard key={details._id} cardValue={details}/>))}
             </section>
         </main>

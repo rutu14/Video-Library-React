@@ -32,9 +32,9 @@ const LikedCard = ({ video }) => {
     },[])
 
     return(
-        <div className="card card-box-shadow home-card video-card">
+        <div className="card card-box-shadow video-card">
             <img className="card-img video-card-img" alt={`${title}`} src={videoContent}/>
-            <span className='time-info video-card-time'>
+            <span className='time-info'>
                 <TimeIcon width={14} height={14}/>
                 <span className='time-value'>{convertedTime}</span>
             </span>

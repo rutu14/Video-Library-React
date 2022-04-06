@@ -1,11 +1,9 @@
-import { useNavigate } from "react-router";
 import { DeleteIcon, LikeIcon, TimeIcon, ViewIcon } from "../../asset";
 import { timeInHoursAndMinutes, useLikeStatus } from "../../utils";
 import { useEffect } from "react";
 import { useLikedVideoActions } from "../../context";
 
-const VideoCard = ({ video, videoLength, playlistId, deletePlaylistVideo }) => {
-    const navigate = useNavigate();
+const WatchLaterCard = ({ video, deleteWatchLater }) => {
     const{
         _id,
         title,
@@ -17,21 +15,16 @@ const VideoCard = ({ video, videoLength, playlistId, deletePlaylistVideo }) => {
 
     const convertedTime = timeInHoursAndMinutes(time);
 
-    const deleteVideo = () => {
-        if ( videoLength !== 1){
-            deletePlaylistVideo( playlistId, _id );
-        }else{
-            deletePlaylistVideo( playlistId, _id );
-            navigate('/playlist');
-        }
-    } 
-
     const { state:likedVideo } = useLikedVideoActions(); 
     const { likedVideoInfo } = likedVideo;
     const { colorChange, setColorChange, likedStatus } = useLikeStatus();
 
     const handleLikedVideo = () => {
-        likedStatus(video,_id)
+        likedStatus( video, _id )
+    }
+
+    const handleDeleteWatchLater = () => {
+        deleteWatchLater(_id)
     }
 
     useEffect( () =>{
@@ -58,7 +51,7 @@ const VideoCard = ({ video, videoLength, playlistId, deletePlaylistVideo }) => {
                     <button className={`btn aside-btns cp ${colorChange}`} onClick={handleLikedVideo}>
                             <LikeIcon width={29} height={29} />
                     </button>
-                    <button className="btn card-delete video-card-delete cp" onClick={deleteVideo} >
+                    <button className="btn card-delete video-card-delete cp" onClick={handleDeleteWatchLater} >
                         <DeleteIcon width={30} height={30}/>
                     </button>  
                 </section> 
@@ -67,4 +60,4 @@ const VideoCard = ({ video, videoLength, playlistId, deletePlaylistVideo }) => {
     );
 }
 
-export { VideoCard }
+export { WatchLaterCard }

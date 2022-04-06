@@ -59,9 +59,11 @@ body{
 }
 
 @media only screen and (max-width: 600px) {
+  
     .login-main-container{
 		  padding: 0;
     }
+
     .page-align{
       display: flex;
       align-items: center;

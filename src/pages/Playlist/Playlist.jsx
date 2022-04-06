@@ -23,10 +23,6 @@ const Playlist = () => {
     return(
         <main className="main-container">            
 
-            {loader && <section className="loader-section"><Loader/></section>}
-
-            { emptyPage && <section className="text3 light loader-section">Add Playlists to play ▶</section>} 
-
             <section className="video-section">
                 <section className="video-section-title">
                     <h3 className="text3 medium text-capitalize">View your Playlists</h3>
@@ -36,6 +32,10 @@ const Playlist = () => {
                     <span className="add-section-text">Add Playlist</span>
                 </button>
             </section>
+
+            {loader && <section className="loader-section"><Loader/></section>}
+
+            { emptyPage && <section className="text3 light loader-section">Add Playlists to play ▶</section>} 
 
             {isOpen && <CreatePlaylist close={closeOperation} /> }
 

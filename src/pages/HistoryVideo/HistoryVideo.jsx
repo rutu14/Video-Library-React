@@ -21,13 +21,9 @@ const HistoryVideo = () => {
     const clearHistory = () => deleteAllHistoryVideo();
 
     return(
-        <main className="main-container page-align">
+        <main className="main-container">
 
-        {loader && <section className="loader-section"><Loader/></section>}
-
-        { emptyPage && <section className="text3 light loader-section">Watch Your history 🕐</section>} 
-
-        <section className="video-section">
+            <section className="video-section">
                 <section className="video-section-title">
                     <h3 className="text3 medium text-capitalize">History</h3>
                 </section>
@@ -35,11 +31,16 @@ const HistoryVideo = () => {
                     <span className="video-section-text">Clear History</span>
                     <DeleteIcon width={20} height={20} /> 
                 </button>
-        </section>
+            </section>
 
-        <section className="grid-3-cols m-t20 home-page-grid">                            
-            {historyVideoInfo && historyVideoInfo.map( (history) => (<HistoryCard key={history._id} video={history} deleteHistoryVideo={deleteHistoryVideo} /> ))}
-        </section>
+            {loader && <section className="loader-section"><Loader/></section>}
+
+            { emptyPage && <section className="text3 light loader-section">Watch Your history 🕐</section>} 
+
+            <section className="grid-3-cols m-t20 page-align home-page-grid">                            
+                {historyVideoInfo && historyVideoInfo.map( (history) => (<HistoryCard key={history._id} video={history} deleteHistoryVideo={deleteHistoryVideo} /> ))}
+            </section>
+
         </main>
     );
 }

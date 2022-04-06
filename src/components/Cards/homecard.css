@@ -44,8 +44,8 @@
     transform: translate(-69px,-30px);
     color: var(--rating-checked);
     background-color: var(--time-info);
-    width: 62px;
-    height: 20px;
+    width: 6.2rem;
+    height: 2rem;
     grid-column: 3;
     grid-row: 2;
 }

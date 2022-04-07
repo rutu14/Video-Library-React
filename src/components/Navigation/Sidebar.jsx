@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { HistoryFolder, Home, LikeFolder, Logout, PlaylistFolder, WatchlistFolder } from '../../asset';
 import { useUserActions } from '../../context';
 import { useMediaQuery } from '../../utils';
+import ThemeToggle from './ThemeToggle';
 
 const Sidebar = () => {
     
@@ -12,6 +13,7 @@ const Sidebar = () => {
     const MobileSidebar = () => {
         return(
         <div className="sidebar">
+            <ThemeToggle/>
             <div className="icon-holder">
                 <Link to={'/'} className="btn-icon">
                     <Home width={32} height={32}/>
@@ -42,6 +44,7 @@ const Sidebar = () => {
     return(<>
         {mobileView ? <MobileSidebar/>
             : <div className="sidebar">
+                <ThemeToggle/>
                 <div className="icon-holder">
                     <Link to={'/'} className="btn-icon">
                         <Home width={40} height={40}/>

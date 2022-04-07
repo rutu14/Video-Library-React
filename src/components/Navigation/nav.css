@@ -96,7 +96,7 @@
     transform: translate(0px, 55px);
     padding: 1rem 2rem;
     font-size: 1.6rem;
-    background-color: var(--bg);
+    background-color: var(--dropdown-bg, var(--bg));
     border: 1px solid var(--btn-link);
     border-radius: 4px;
 }
@@ -104,6 +104,7 @@
 .menu-option{
 	display: flex;
     align-items: center;
+    color:var(--dropdown-color);
 }
   
 .dropdown-menu:after,
@@ -123,7 +124,7 @@
 }
   
 .dropdown-menu:after {
-    border-bottom-color: var(--bg);
+    border-bottom-color: var(--dropdown-bg, var(--bg));
     border-width: 5.8px;
     margin-left: -5.8px;
 }
@@ -146,6 +147,49 @@
     line-height: 2.4rem;
     font-size: 1.6rem;
 }
+
+.theme-switcher:checked {
+    background: #343045;
+    border-color: #f3f0fe;
+    color: wheat;
+    --place-change: 1.7rem;
+    content: "\F496";
+    font-family: bootstrap-icon;
+}
+    
+.theme-switcher:not(:checked):after{
+    color: #FDB813;
+    --check-inner: #ffffff00;
+    content: "\F5A1";
+    font-family: bootstrap-icons;
+}
+
+.theme-switcher:after{
+    --check-inner: #ffffff00;
+    content: "\F496";
+    font-family: bootstrap-icons;
+}
+
+.theme-switcher {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid transparent;
+    background: #fae9d4d4;
+    margin: 0 auto;
+}
+
+.theme-switcher:focus{
+    box-shadow: unset;
+}
+
+.theme-switcher:hover:not(:checked):not(:disabled){
+    border-color: var(--white);
+}
+
   
 @media only screen and (max-width: 1200px) {
     .input-width {

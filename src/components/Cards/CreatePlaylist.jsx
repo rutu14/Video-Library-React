@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { usePlaylist } from "../../context";
-import { Loader } from "../../components"
+import { Loader } from "../../components";
+import { toast } from "react-toastify";
 
 const CreatePlaylist = ({close }) =>{
 
-    const [ playlistDetails, setPlaylistDetails ] = useState({title:" ",desc:" "});
+    const [ playlistDetails, setPlaylistDetails ] = useState({title:"",desc:""});
     const { state, addPlaylist } = usePlaylist();
     const { loader } = state;
 
@@ -17,9 +18,13 @@ const CreatePlaylist = ({close }) =>{
     };
 
     const onSubmit = () =>{
-        addPlaylist({ title: playlistDetails.title, description: playlistDetails.desc });
-        setPlaylistDetails({ title:" ", desc: " " });
-        close();
+        if( playlistDetails.title === "" ){
+            toast.warning("Title is mandatory!");
+        }else{
+            addPlaylist({ title: playlistDetails.title, description: playlistDetails.desc });
+            setPlaylistDetails({ title:" ", desc: " " });
+            close();
+        }
     }
 
     return(
@@ -29,10 +34,10 @@ const CreatePlaylist = ({close }) =>{
                 <section className="modal-content text4 medium">
                     <form className="inner-login-box" >
 
-                        <label htmlFor="title-input" className="text4">Title</label>
+                        <label htmlFor="title-input" className="text4 font-color">Title</label>
                         <input id="title-input" className="text-input login-input" value={playlistDetails.title} name='title' type="text" onChange={handleChange}/>
 
-                        <label htmlFor="desc-input" className="text4 m-t20">Description</label>
+                        <label htmlFor="desc-input" className="text4 m-t20 font-color">Description</label>
                         <input id="desc-input" className="text-input login-input" value={playlistDetails.desc} name='desc' type="text" onChange={handleChange}/>                
 
                         { loader 

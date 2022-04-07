@@ -25,7 +25,7 @@ const HistoryVideo = () => {
 
             <section className="video-section">
                 <section className="video-section-title">
-                    <h3 className="text3 medium text-capitalize">History</h3>
+                    <h3 className="text3 medium text-capitalize font-color">History</h3>
                 </section>
                 <button className="btn add-section video-section-btn cp" onClick={clearHistory}>                    
                     <span className="video-section-text">Clear History</span>
@@ -35,7 +35,7 @@ const HistoryVideo = () => {
 
             {loader && <section className="loader-section"><Loader/></section>}
 
-            { emptyPage && <section className="text3 light loader-section">Watch Your history 🕐</section>} 
+            { emptyPage && <section className="text3 light loader-section font-color">Watch Your history 🕐</section>} 
 
             <section className="grid-3-cols m-t20 page-align home-page-grid">                            
                 {historyVideoInfo && historyVideoInfo.map( (history) => (<HistoryCard key={history._id} video={history} deleteHistoryVideo={deleteHistoryVideo} /> ))}

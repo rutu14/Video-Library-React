@@ -15,7 +15,7 @@
     border-radius: 8px;
     box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
     padding: 3.2rem;
-    background-color: #beb7f230;
+    background-color: var(--auth-box);
 }
 
 .inner-login-box {
@@ -33,7 +33,8 @@
     padding-inline-start: 1.6rem;
     line-height: 2.4rem;
     font-size: 1.6rem;
-    background-color: #f6f8ff7a;
+    color: var(--font-color);
+    background-color: var(--input-bg);
 }
 
 input.login-input:focus{
@@ -77,5 +78,16 @@ input.login-input:focus{
 }
 
 .signerror{
-    left: 32%;
+    left: 34%;
+}
+
+.guest-login{
+    border: none;
+    margin: -13px 11rem;
+}
+
+@media only screen and (max-width: 600px){
+    .loginerror,.signerror {
+        left: 10%;
+    }
 }

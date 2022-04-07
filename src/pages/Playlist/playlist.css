@@ -34,11 +34,11 @@
 
 .card-text-title{
     overflow-x: clip;
-    color: inherit;
+    color: var(--home-cards-contents);
 }
 
 .card-text-title:active,.card-text-title:visited{
-    color: inherit;
+    color: var(--home-cards-contents);
 }
 
 .card-video{
@@ -49,7 +49,7 @@
 }
 
 .card-delete{
-    color: var(--black);
+    color: var(--font-color);
     margin-left: auto;
     margin-right: 1rem;
     border: none;

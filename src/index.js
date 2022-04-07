@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import { makeServer } from "./server";
 import { HistoryVideoProvider, LikedVideoProvider, PlaylistProvider, UserProvider,VideoProvider, WatchLaterProvider } from './context';
+import "react-toastify/dist/ReactToastify.css";
+import './index.css';
+import App from './App';
 
 makeServer();
 

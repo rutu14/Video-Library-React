@@ -27,8 +27,8 @@ const PlaylistIndividual = () => {
 
             <section className="video-section">
                 <section className="video-section-title">
-                    <h3 className="text3 medium text-capitalize">{title}</h3>
-                    <h3 className="text4 regular">{description}</h3>
+                    <h3 className="text3 medium text-capitalize font-color">{title}</h3>
+                    <h3 className="text4 regular font-color">{description}</h3>
                 </section>
                 <button className="btn add-section video-section-btn cp" onClick={deletePlaylistNow}>                    
                     <span className="video-section-text">Delete Playlist</span>

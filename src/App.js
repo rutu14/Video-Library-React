@@ -1,13 +1,13 @@
-import './App.css';
 import MockmanEs from 'mockman-js';
 import { Route, Routes } from 'react-router';
 import { HistoryVideo, Home, LikedVideo, LoginPage, Playlist, PlaylistIndividual, SignUpPage, WatchList } from './pages';
 import { PageLayout, AuthPageLayout, PrivateRoute } from './utils';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
-  return (
+	const storedTheme = localStorage.getItem("theme");
+  return (<>
 	<Routes>
-
 		<Route element={<AuthPageLayout/>}>
 			<Route path='login' element={<LoginPage/>}/>
 			<Route path='signup' element={<SignUpPage/>}/>
@@ -26,8 +26,9 @@ function App() {
 			<Route path='playlist/:playlistId' element={<PlaylistIndividual/>}/>
 			<Route path='liked' element={<LikedVideo/>}/>
 		</Route>
-
 	</Routes>
+	<ToastContainer theme={storedTheme} position="bottom-center" autoClose={2000} newestOnTop closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover/>
+	</>
   );
 }
 

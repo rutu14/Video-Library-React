@@ -23,7 +23,7 @@ const WatchList = () => {
 
             <section className="video-section">
                 <section className="video-section-title">
-                    <h3 className="text3 medium text-capitalize">WatchLater</h3>
+                    <h3 className="text3 medium text-capitalize font-color">WatchLater</h3>
                 </section>
                 <button className="btn add-section video-section-btn cp" onClick={clearWatchLater}>                    
                         <span className="video-section-text">Clear WatchLater</span>
@@ -33,7 +33,7 @@ const WatchList = () => {
 
             {loader && <section className="loader-section"><Loader/></section>}
 
-            { emptyPage && <section className="text3 light loader-section">Add Playlists to play ▶</section>} 
+            { emptyPage && <section className="text3 light loader-section font-color">Add Playlists to play ▶</section>} 
 
             <section className="grid-3-cols m-t20 page-align home-page-grid" >                
                 {watchLaterInfo && watchLaterInfo.map((video)=>( <WatchLaterCard key={video._id} video={video} deleteWatchLater={deleteWatchLater}/> ))}

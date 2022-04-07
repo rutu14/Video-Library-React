@@ -4,7 +4,9 @@ import { AddIcon, InfoIcon, LikeIcon, PlayIcon, TimeIcon, ViewIcon, WatchlistFol
 import { useHistoryVideoActions, useLikedVideoActions, useUserActions, useWatchLaterActions } from '../../context';
 import { timeInHoursAndMinutes, useModalOperations, useLikeStatus } from '../../utils';
 import { AddtoPlaylist } from '../../components';
+import { toast } from "react-toastify";
 import './homecard.css';
+
 
 const HomeCard = ({cardValue}) => {
 
@@ -59,6 +61,7 @@ const HomeCard = ({cardValue}) => {
         const user = verifyUser();
         if(user){
             addWatchLater(cardValue);
+            toast.success("Added to Watch Later");
         }
     }
 

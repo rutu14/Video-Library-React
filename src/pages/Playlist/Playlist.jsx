@@ -25,7 +25,7 @@ const Playlist = () => {
 
             <section className="video-section">
                 <section className="video-section-title">
-                    <h3 className="text3 medium text-capitalize">View your Playlists</h3>
+                    <h3 className="text3 medium text-capitalize font-color">View your Playlists</h3>
                 </section>
                 <button className="btn add-section cp" onClick={openOperation}>
                     <AddFolder width={30} height={30} /> 
@@ -35,7 +35,7 @@ const Playlist = () => {
 
             {loader && <section className="loader-section"><Loader/></section>}
 
-            { emptyPage && <section className="text3 light loader-section">Add Playlists to play ▶</section>} 
+            { emptyPage && <section className="text3 light loader-section font-color">Add Playlists to play ▶</section>} 
 
             {isOpen && <CreatePlaylist close={closeOperation} /> }
 

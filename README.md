@@ -1,8 +1,9 @@
 # CHITRAM
 
 This project is a video library app created with ReactJS.
+[Live Site](https://super-praline-0dea59.netlify.app/)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/91ac479f-2259-4642-b1a2-07a68c981261/deploy-status)](https://app.netlify.com/sites/musing-goldberg-fee044/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5c31cfa0-e680-412b-9b67-fb42a2a10cab/deploy-status)](https://app.netlify.com/sites/super-praline-0dea59/deploys)
 
 ## Screens 
 
